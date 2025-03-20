@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="dashboard.js" defer></script>
+    <script src="https://kit.fontawesome.com/604d3ac1e0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2>Library</h2>
+    <ul>
+        <li><a href="#" onclick="showHome()">📂 Home</a></li>
+        <li><a href="#" onclick="showBooks()">📚 Books</a></li>
+        <li><a href="#" onclick="showIssuedBooks()">📖 Issued Books</a></li>
+        <li><a href="#" onclick="showDueBooks()">📅 Due Books</a></li>
+        <li><a href="#" onclick="showBranches()">🏢 Branches</a></li>
+        <li><a href="#" onclick="showSelectedAuthor()">✍️ Authors</a></li>
+        <li><a href="#" onclick="showeLibrary()">💻 e-Library</a></li>
+    </ul>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <header>
+        <div class="top-left">
+            <input type="text" class="search-bar" placeholder="🔍 Search in Library">
+        </div>
+        
+        <div class="top-right">
+            <button id="loginButton" onclick="openLoginModal()">Login</button>
+            <img src="user.jpg" id="userIcon" style="display: none;">
+            <button class="layout-toggle" onclick="toggleLayout()">
+                <i class="fas fa-th-large"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="content" id="content">
+        <h2>Welcome to the Library Management System</h2>
+        <p>Select an option from the panel to get started.</p>
+        <div id="fileContainer" class="grid-view">
+            <div class="file-card">📄 File 1</div>
+            <div class="file-card">📄 File 2</div>
+            <div class="file-card">📄 File 3</div>
+            <div class="file-card">📄 File 4</div>
+        </div>
+    </div>
+</div>
+
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeLoginModal()">&times;</span>
+        <h2>Login</h2>
+        <label for="sapID">SAP ID:</label>
+        <input type="text" id="sapID" placeholder="Enter your SAP ID">
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password">
+        
+        <button onclick="authenticateUser ()">Login</button>
+        <p id="loginError" class="error-message"></p>
+    </div>
+</div>
+
+</body>
+</html>
